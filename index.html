@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+<style>
+body{
+	
+	background:url(coming-soon-v1.png) center top no-repeat #fff;
+	
+}
+.img-col{
+	
+	width:600px;
+	height:680px;
+	margin:auto;
+	position:relative;
+	
+
+	
+	
+	}
+.img{
+	
+
+	}
+
+.txt-box {
+ 	border:none;
+    height: 34px;
+    padding-left: 8px;
+    position: absolute;
+  
+	 right: 98px;
+    top: 121px;
+    width: 81.4%;
+    
+}
+.btn {
+    background: #0c3 none repeat scroll 0 0;
+    border: medium none;
+    color: #fff;
+    height: 36px;
+    position: absolute;
+    cursor:pointer;
+	
+	
+	right: 2px;
+    top: 121px;
+    width: 17%;
+}
+
+.sign{
+	
+	position:absolute;
+	top:304px;
+	left:89%;	
+	
+	}
+@media (max-width: 768px) {
+  .sign{
+	
+	position:absolute;
+	top:304px;
+	left:45%;	
+	
+	}
+}
+</style>
+<script type="text/javascript">
+        $(document).ready(function () {
+            $("#subscribe_user_btn").click(function(e){
+                 
+                data = {
+                  "apikey" : "349057519f2f38ae0c7e532c18b2822d-us11", 
+                  "id" : "e74051ff88", 
+                  "email_address" : "test@mail.com", 
+                  "output" : "json"
+                };
+                
+                $.ajax({ 
+                type: "POST",
+                url: 'https://us11.api.mailchimp.com/3.0/?method=listSubscribe',
+                data: data,
+                dataType:"json",
+                
+                success: function(data){
+                  alert(1);
+                },
+                error: function(error){
+                  alert(JSON.stringify(error));
+                }
+              }); 
+            });
+            });
+        </script>
+</head>
+
+<body style="margin:0;">
+
+
+<div class="img-col" id="mc_embed_signup">
+	<form action="https://myvmall.us11.list-manage.com/subscribe/post?u=356c06928fe50039273b0023b&amp;id=aa47a2e925" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<input type="email"  name="EMAIL" id="mce-EMAIL" class="txt-box" placeholder="Enter your email"> 
+<!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+<div style="position: absolute; left: -5000px;"><input type="text" name="b_a440c2ebf0f0c6292e20e2a2c_e74051ff88" tabindex="-1" value=""></div>
+<input type="submit" value="SUBSCRIBE" name="subscribe" id="mc-embedded-subscribe" class="btn">
+<img src="sign.png" class="sign" />
+</form>
+</div>
+
+
+</body>
+</html>
